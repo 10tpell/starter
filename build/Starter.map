@@ -1,0 +1,261 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000008000000 0x0000000000080000 xr
+RAM              0x0000000020000000 0x0000000000020000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/travis/stm32/toolchain/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7e-m/nofp/libgcc.a
+LOAD CMakeFiles/Starter.dir/src/startup.s.obj
+LOAD CMakeFiles/Starter.dir/src/main.c.obj
+LOAD CMakeFiles/Starter.dir/src/ISRs.c.obj
+LOAD CMakeFiles/Starter.dir/src/GPIO.c.obj
+                0x0000000020020000                _estack = 0x20020000
+                0x0000000000000400                _Min_Leftover_RAM = 0x400
+
+.vector_table   0x0000000008000000      0x1c8
+                0x0000000008000000                . = ALIGN (0x4)
+ *(.vector_table)
+ .vector_table  0x0000000008000000      0x1c8 CMakeFiles/Starter.dir/src/startup.s.obj
+                0x00000000080001c8                . = ALIGN (0x4)
+
+.text           0x00000000080001c8      0x6b4
+                0x00000000080001c8                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000000080001c8        0x0 CMakeFiles/Starter.dir/src/startup.s.obj
+ .text          0x00000000080001c8      0x2fc CMakeFiles/Starter.dir/src/main.c.obj
+                0x0000000008000254                main
+                0x000000000800047c                _write
+ .text          0x00000000080004c4       0x70 CMakeFiles/Starter.dir/src/ISRs.c.obj
+                0x00000000080004c4                EXTI15_10_IRQHandler
+                0x0000000008000504                SysTick_Handler
+ .text          0x0000000008000534      0x300 CMakeFiles/Starter.dir/src/GPIO.c.obj
+                0x0000000008000534                GPIO_Init
+                0x00000000080005bc                GPIO_InitPin
+                0x0000000008000774                GPIO_WritePin
+ *(.text*)
+ .text.default_interrupt_handler
+                0x0000000008000834       0x48 CMakeFiles/Starter.dir/src/startup.s.obj
+                0x0000000008000834                RTC_Alarm_IRQHandler
+                0x0000000008000834                EXTI2_IRQHandler
+                0x0000000008000834                TIM8_CC_IRQHandler
+                0x0000000008000834                DebugMon_Handler
+                0x0000000008000834                FMPI2C1_EV_IRQHandler
+                0x0000000008000834                SPI4_IRQHandler
+                0x0000000008000834                TIM1_CC_IRQHandler
+                0x0000000008000834                DMA2_Stream5_IRQHandler
+                0x0000000008000834                HardFault_Handler
+                0x0000000008000834                DMA1_Stream5_IRQHandler
+                0x0000000008000834                PVD_IRQHandler
+                0x0000000008000834                SDIO_IRQHandler
+                0x0000000008000834                NMI_Handler
+                0x0000000008000834                CAN2_RX1_IRQHandler
+                0x0000000008000834                EXTI3_IRQHandler
+                0x0000000008000834                TIM8_TRG_COM_TIM14_IRQHandler
+                0x0000000008000834                TIM1_UP_TIM10_IRQHandler
+                0x0000000008000834                TIM8_UP_TIM13_IRQHandler
+                0x0000000008000834                I2C3_ER_IRQHandler
+                0x0000000008000834                EXTI0_IRQHandler
+                0x0000000008000834                I2C2_EV_IRQHandler
+                0x0000000008000834                DMA1_Stream2_IRQHandler
+                0x0000000008000834                CAN1_RX0_IRQHandler
+                0x0000000008000834                FPU_IRQHandler
+                0x0000000008000834                OTG_HS_WKUP_IRQHandler
+                0x0000000008000834                CAN2_SCE_IRQHandler
+                0x0000000008000834                DMA2_Stream2_IRQHandler
+                0x0000000008000834                SPI1_IRQHandler
+                0x0000000008000834                TIM6_DAC_IRQHandler
+                0x0000000008000834                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008000834                DCMI_IRQHandler
+                0x0000000008000834                CAN2_RX0_IRQHandler
+                0x0000000008000834                DMA2_Stream3_IRQHandler
+                0x0000000008000834                SAI2_IRQHandler
+                0x0000000008000834                USART6_IRQHandler
+                0x0000000008000834                USART3_IRQHandler
+                0x0000000008000834                CAN1_RX1_IRQHandler
+                0x0000000008000834                UART5_IRQHandler
+                0x0000000008000834                DMA2_Stream0_IRQHandler
+                0x0000000008000834                TIM4_IRQHandler
+                0x0000000008000834                QUADSPI_IRQHandler
+                0x0000000008000834                I2C1_EV_IRQHandler
+                0x0000000008000834                DMA1_Stream6_IRQHandler
+                0x0000000008000834                DMA1_Stream1_IRQHandler
+                0x0000000008000834                UART4_IRQHandler
+                0x0000000008000834                TIM3_IRQHandler
+                0x0000000008000834                RCC_IRQHandler
+                0x0000000008000834                TIM8_BRK_TIM12_IRQHandler
+                0x0000000008000834                CEC_IRQHandler
+                0x0000000008000834                ADC_IRQHandler
+                0x0000000008000834                DMA1_Stream7_IRQHandler
+                0x0000000008000834                TIM7_IRQHandler
+                0x0000000008000834                CAN2_TX_IRQHandler
+                0x0000000008000834                TIM5_IRQHandler
+                0x0000000008000834                DMA2_Stream7_IRQHandler
+                0x0000000008000834                EXTI9_5_IRQHandler
+                0x0000000008000834                RTC_WKUP_IRQHandler
+                0x0000000008000834                SPDIF_RX_IRQHandler
+                0x0000000008000834                SPI2_IRQHandler
+                0x0000000008000834                OTG_HS_EP1_IN_IRQHandler
+                0x0000000008000834                MemManage_Handler
+                0x0000000008000834                DMA1_Stream0_IRQHandler
+                0x0000000008000834                CAN1_TX_IRQHandler
+                0x0000000008000834                SVC_Handler
+                0x0000000008000834                EXTI4_IRQHandler
+                0x0000000008000834                OTG_HS_EP1_OUT_IRQHandler
+                0x0000000008000834                TIM2_IRQHandler
+                0x0000000008000834                OTG_FS_WKUP_IRQHandler
+                0x0000000008000834                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008000834                OTG_HS_IRQHandler
+                0x0000000008000834                EXTI1_IRQHandler
+                0x0000000008000834                USART2_IRQHandler
+                0x0000000008000834                DMA2_Stream1_IRQHandler
+                0x0000000008000834                CAN1_SCE_IRQHandler
+                0x0000000008000834                FLASH_IRQHandler
+                0x0000000008000834                DMA2_Stream4_IRQHandler
+                0x0000000008000834                BusFault_Handler
+                0x0000000008000834                USART1_IRQHandler
+                0x0000000008000834                OTG_FS_IRQHandler
+                0x0000000008000834                SPI3_IRQHandler
+                0x0000000008000834                DMA1_Stream4_IRQHandler
+                0x0000000008000834                I2C1_ER_IRQHandler
+                0x0000000008000834                FMC_IRQHandler
+                0x0000000008000834                DMA2_Stream6_IRQHandler
+                0x0000000008000834                SAI1_IRQHandler
+                0x0000000008000834                DMA1_Stream3_IRQHandler
+                0x0000000008000836                Reset_Handler
+                0x000000000800087c                . = ALIGN (0x4)
+
+.glue_7         0x000000000800087c        0x0
+ .glue_7        0x000000000800087c        0x0 linker stubs
+
+.glue_7t        0x000000000800087c        0x0
+ .glue_7t       0x000000000800087c        0x0 linker stubs
+
+.vfp11_veneer   0x000000000800087c        0x0
+ .vfp11_veneer  0x000000000800087c        0x0 linker stubs
+
+.v4_bx          0x000000000800087c        0x0
+ .v4_bx         0x000000000800087c        0x0 linker stubs
+
+.iplt           0x000000000800087c        0x0
+ .iplt          0x000000000800087c        0x0 CMakeFiles/Starter.dir/src/startup.s.obj
+
+.rel.dyn        0x000000000800087c        0x0
+ .rel.iplt      0x000000000800087c        0x0 CMakeFiles/Starter.dir/src/startup.s.obj
+
+.rodata         0x000000000800087c        0x0
+                0x000000000800087c                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x000000000800087c                . = ALIGN (0x4)
+                0x000000000800087c                _sidata = .
+
+.data           0x0000000020000000       0x70 load address 0x000000000800087c
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                _sdata = .
+ *(.data)
+ .data          0x0000000020000000        0x0 CMakeFiles/Starter.dir/src/startup.s.obj
+ .data          0x0000000020000000       0x6c CMakeFiles/Starter.dir/src/main.c.obj
+                0x0000000020000000                led_on
+                0x0000000020000004                core_clock_hz
+ .data          0x000000002000006c        0x4 CMakeFiles/Starter.dir/src/ISRs.c.obj
+                0x000000002000006c                toggle_en
+ .data          0x0000000020000070        0x0 CMakeFiles/Starter.dir/src/GPIO.c.obj
+ *(.data*)
+                0x0000000020000070                _edata = .
+                0x0000000020000070                . = ALIGN (0x4)
+
+.igot.plt       0x0000000020000070        0x0 load address 0x00000000080008ec
+ .igot.plt      0x0000000020000070        0x0 CMakeFiles/Starter.dir/src/startup.s.obj
+
+.bss            0x0000000020000070        0x0 load address 0x00000000080008ec
+                0x0000000020000070                . = ALIGN (0x4)
+                0x0000000020000070                _sbss = .
+ *(.bss)
+ .bss           0x0000000020000070        0x0 CMakeFiles/Starter.dir/src/startup.s.obj
+ .bss           0x0000000020000070        0x0 CMakeFiles/Starter.dir/src/main.c.obj
+ .bss           0x0000000020000070        0x0 CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .bss           0x0000000020000070        0x0 CMakeFiles/Starter.dir/src/GPIO.c.obj
+ *(.bss*)
+ *(COMMON)
+                0x0000000020000070                . = ALIGN (0x4)
+                0x0000000020000070                _ebss = .
+
+.dynamic_allocations
+                0x0000000020000070      0x400 load address 0x00000000080008ec
+                0x0000000020000070                . = ALIGN (0x4)
+                0x0000000020000070                _ssystem_ram = .
+                0x0000000020000470                . = (. + _Min_Leftover_RAM)
+ *fill*         0x0000000020000070      0x400 
+                0x0000000020000470                . = ALIGN (0x4)
+                0x0000000020000470                _esystem_ram = .
+OUTPUT(Starter elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x0000000000000000       0x2f
+ .ARM.attributes
+                0x0000000000000000       0x21 CMakeFiles/Starter.dir/src/startup.s.obj
+ .ARM.attributes
+                0x0000000000000021       0x2e CMakeFiles/Starter.dir/src/main.c.obj
+ .ARM.attributes
+                0x000000000000004f       0x2e CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .ARM.attributes
+                0x000000000000007d       0x2e CMakeFiles/Starter.dir/src/GPIO.c.obj
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 CMakeFiles/Starter.dir/src/main.c.obj
+                                         0x34 (size before relaxing)
+ .comment       0x0000000000000033       0x34 CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .comment       0x0000000000000033       0x34 CMakeFiles/Starter.dir/src/GPIO.c.obj
+
+.debug_line     0x0000000000000000      0x8bc
+ .debug_line    0x0000000000000000       0x6c CMakeFiles/Starter.dir/src/startup.s.obj
+ .debug_line    0x000000000000006c      0x339 CMakeFiles/Starter.dir/src/main.c.obj
+ .debug_line    0x00000000000003a5      0x1cd CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .debug_line    0x0000000000000572      0x34a CMakeFiles/Starter.dir/src/GPIO.c.obj
+
+.debug_line_str
+                0x0000000000000000       0x56
+ .debug_line_str
+                0x0000000000000000       0x56 CMakeFiles/Starter.dir/src/startup.s.obj
+                                         0x60 (size before relaxing)
+
+.debug_info     0x0000000000000000     0x1427
+ .debug_info    0x0000000000000000       0x24 CMakeFiles/Starter.dir/src/startup.s.obj
+ .debug_info    0x0000000000000024      0xdac CMakeFiles/Starter.dir/src/main.c.obj
+ .debug_info    0x0000000000000dd0      0x130 CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .debug_info    0x0000000000000f00      0x527 CMakeFiles/Starter.dir/src/GPIO.c.obj
+
+.debug_abbrev   0x0000000000000000      0x4d5
+ .debug_abbrev  0x0000000000000000       0x14 CMakeFiles/Starter.dir/src/startup.s.obj
+ .debug_abbrev  0x0000000000000014      0x266 CMakeFiles/Starter.dir/src/main.c.obj
+ .debug_abbrev  0x000000000000027a       0xc3 CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .debug_abbrev  0x000000000000033d      0x198 CMakeFiles/Starter.dir/src/GPIO.c.obj
+
+.debug_aranges  0x0000000000000000       0x80
+ .debug_aranges
+                0x0000000000000000       0x20 CMakeFiles/Starter.dir/src/startup.s.obj
+ .debug_aranges
+                0x0000000000000020       0x20 CMakeFiles/Starter.dir/src/main.c.obj
+ .debug_aranges
+                0x0000000000000040       0x20 CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .debug_aranges
+                0x0000000000000060       0x20 CMakeFiles/Starter.dir/src/GPIO.c.obj
+
+.debug_str      0x0000000000000000      0xb3a
+ .debug_str     0x0000000000000000       0x62 CMakeFiles/Starter.dir/src/startup.s.obj
+ .debug_str     0x0000000000000062      0xa02 CMakeFiles/Starter.dir/src/main.c.obj
+                                        0xaba (size before relaxing)
+ .debug_str     0x0000000000000a64       0x5e CMakeFiles/Starter.dir/src/ISRs.c.obj
+                                        0x196 (size before relaxing)
+ .debug_str     0x0000000000000ac2       0x78 CMakeFiles/Starter.dir/src/GPIO.c.obj
+                                        0x3ba (size before relaxing)
+
+.debug_frame    0x0000000000000000      0x17c
+ .debug_frame   0x0000000000000000       0xa8 CMakeFiles/Starter.dir/src/main.c.obj
+ .debug_frame   0x00000000000000a8       0x50 CMakeFiles/Starter.dir/src/ISRs.c.obj
+ .debug_frame   0x00000000000000f8       0x84 CMakeFiles/Starter.dir/src/GPIO.c.obj
